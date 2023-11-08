@@ -27,3 +27,5 @@ def signup(request):
     return render(request, 'pages/signup.html')
 def post_form(request):
     return render(request, 'pages/post-form.html')
+def support(request):
+    return render(request, 'pages/support.html')
