@@ -21,3 +21,9 @@ def customer(request):
 
 def login(request):
     return render(request, 'pages/login.html')
+def forgot_pw(request):
+    return render(request, 'pages/forgot-password.html')
+def signup(request):
+    return render(request, 'pages/signup.html')
+def post_form(request):
+    return render(request, 'pages/post-form.html')
