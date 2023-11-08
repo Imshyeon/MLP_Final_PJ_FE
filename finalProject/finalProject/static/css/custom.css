@@ -1,0 +1,13 @@
+/* 네비게이션 바를 상단에 고정합니다 */
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* 필요에 따라 z-index 값을 조정하세요 */
+  }
+  
+  /* footer를 스크롤의 끝에 위치하도록 만듭니다 */
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
