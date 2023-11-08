@@ -1,45 +1,90 @@
-const navElements = document.querySelector('#navElements')  // 혹시 쓸수 있을 거 같아서 남겨둠.
-const community = document.querySelector('#navElement-1')
-const test = document.querySelector('#navElement-2')
-const contact = document.querySelector('#navElement-3')
-const customer = document.querySelector('#navElement-4')
-const login = document.querySelector('#navElement-5')
+(function(){
 
-community.addEventListener('click',function(){
-    console.log('clicked 1')
-})
-test.addEventListener('click',function(){
-    console.log('clicked 2')
-})
-contact.addEventListener('click',function(){
-    console.log('clicked 3')
-})
-customer.addEventListener('click',function(){
-    console.log('clicked 4')
-})
+	'use strict'
 
-document.addEventListener("DOMContentLoaded",function(){
-    const navBurger = document.querySelector('#OpenNav')
-    const navList = document.querySelector('#mobile-menu')
 
-    navBurger.addEventListener('click',function(){
-        navList.classList.toggle('hidden')
-    })
-})
+	var siteMenuClone = function() {
+		var jsCloneNavs = document.querySelectorAll('.js-clone-nav');
+		var siteMobileMenuBody = document.querySelector('.site-mobile-menu-body');
+		
 
-// ================추가적인 고민 필요...===================
-document.addEventListener('DOMContentLoaded', function() {
-    const darkModeSwitch = document.querySelector('#darkModeSwitch');
-    const body = document.body;
-  
-    darkModeSwitch.addEventListener('click', function() {
-      body.classList.toggle('dark-mode'); // 다크 모드 클래스를 토글
-  
-      // 스위치 클릭 애니메이션을 위한 클래스 추가 및 제거
-      darkModeSwitch.classList.add('is-active');
-      setTimeout(function() {
-        darkModeSwitch.classList.remove('is-active');
-      }, 500);
-    });
-  });
-  
+
+		jsCloneNavs.forEach(nav => {
+			var navCloned = nav.cloneNode(true);
+			navCloned.setAttribute('class', 'site-nav-wrap');
+			siteMobileMenuBody.appendChild(navCloned);
+		});
+
+		setTimeout(function(){
+
+			var hasChildrens = document.querySelector('.site-mobile-menu').querySelectorAll(' .has-children');
+
+			var counter = 0;
+			hasChildrens.forEach( hasChild => {
+				
+				var refEl = hasChild.querySelector('a');
+
+				var newElSpan = document.createElement('span');
+				newElSpan.setAttribute('class', 'arrow-collapse collapsed');
+
+				// prepend equivalent to jquery
+				hasChild.insertBefore(newElSpan, refEl);
+
+				var arrowCollapse = hasChild.querySelector('.arrow-collapse');
+				arrowCollapse.setAttribute('data-bs-toggle', 'collapse');
+				arrowCollapse.setAttribute('data-bs-target', '#collapseItem' + counter);
+
+				var dropdown = hasChild.querySelector('.dropdown');
+				dropdown.setAttribute('class', 'collapse');
+				dropdown.setAttribute('id', 'collapseItem' + counter);
+
+				counter++;
+			});
+
+		}, 1000);
+
+
+		// Click js-menu-toggle
+
+		var menuToggle = document.querySelectorAll(".js-menu-toggle");
+		var mTog;
+		menuToggle.forEach(mtoggle => {
+			mTog = mtoggle;
+			mtoggle.addEventListener("click", (e) => {
+				if ( document.body.classList.contains('offcanvas-menu') ) {
+					document.body.classList.remove('offcanvas-menu');
+					mtoggle.classList.remove('active');
+					mTog.classList.remove('active');
+				} else {
+					document.body.classList.add('offcanvas-menu');
+					mtoggle.classList.add('active');
+					mTog.classList.add('active');
+				}
+			});
+		})
+
+
+
+		var specifiedElement = document.querySelector(".site-mobile-menu");
+		var mt, mtoggleTemp;
+		document.addEventListener('click', function(event) {
+			var isClickInside = specifiedElement.contains(event.target);
+			menuToggle.forEach(mtoggle => {
+				mtoggleTemp = mtoggle
+				mt = mtoggle.contains(event.target);
+			})
+
+			if (!isClickInside && !mt) {
+				if ( document.body.classList.contains('offcanvas-menu') ) {
+					document.body.classList.remove('offcanvas-menu');
+					mtoggleTemp.classList.remove('active');
+				}
+			}
+
+		});
+
+	}; 
+	siteMenuClone();
+
+
+})()
