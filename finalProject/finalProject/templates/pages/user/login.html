@@ -7,50 +7,14 @@
 
 {% block content %}
   <style>
-    .login-box {
-      width: 300px;
-      margin: 0 auto;
-      padding: 20px;
+    .form-group input[type="text"], .form-group input[type="password"]{
       border: 1px solid #ccc;
-      border-radius: 10px;
-      background-color: #f5f5f5;
+      border-radius: 20px;
       text-align: center;
     }
-    
-    .login-box h2 {
-      font-size: 24px;
-      margin: 0;
-      margin-bottom: 30px;
-    }
-    
-    .login-box form {
-      margin-top: 0px;
-    }
-    
-    .login-box label {
-      display: block;
-      margin-bottom: 10px;
-    }
-    
-    .login-box input[type='text'],
-    .login-box input[type='password'] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 50px;
-    }
-    
-    .login-box input[type='submit'] {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    .text-white-hover:hover {
-      color: white;
+    .btn{
+      border-radius: 10rem;
+      padding: .75rem 1rem;
     }
   </style>
 
@@ -63,37 +27,42 @@
               <div class="text-center my-3">
                 <h1 class="h2 text-gray-900">Login Page</h1>
               </div>
-              <div class="col-lg-6 d-none d-lg-block bg-login-image">
-                <img height="300" src="" alt="" />
-              </div>
             </div>
             <div class="row justify-content-center">
               <div class="col-lg-6">
                 <div class="p-5">
                   {% comment %} id, pw {% endcomment %}
-                  <form class="user">
-                    <div class="form-group">
-                      <input type="text" class="form-control form-control-user" id="InputID" placeholder="ID" />
+                  <form action="{% url 'user_login' %}" class="validated_form" method="post">
+                    {% csrf_token %}
+                    {% if error %}
+                    <p style="color: #C71585;">{{ error }}</p>
+                    {% endif %}
+                  <form class="validated_form user">
+                    <div class="form-group mb-3">
+                      <input type="text" class="form-control form-control-user" id="InputID" name="username" placeholder="ID" />
+                      <div class="valid-id"></div>
                     </div>
-                    <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="InputPassword" placeholder="Password" />
+                    <div class="form-group mb-3">
+                      <input type="password" class="form-control form-control-user" id="InputPassword" name="password" placeholder="Password" />
+                      <div class="valid-pw"></div>
                     </div>
                     {% comment %} remember me {% endcomment %}
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck" />
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                    <div class="form-group mb-3">
+                      <div class="custom-control custom-checkbox small text-center">
+                        <input type="checkbox" class="custom-control-input" name="remember_username" id="remember_username" />
+                        <label class="custom-control-label" for="remember_username">Remember Me</label>
                       </div>
                     </div>
                     {% comment %} remember me 끝 {% endcomment %}
-                    <a href="index.html" class="btn btn-primary btn-user btn-block">Login</a>
+                    <button type="submit" class="btn btn-primary btn-user btn-block d-flex justify-content-center">Login</button>
                   </form>
                   <hr />
                   <div class="text-center">
                     <a class="small" href="{% url 'signup' %}">Create an Account!</a>
                   </div>
-                  <div class="text-center">
-                    <a href="{% url 'forgot-id' %}">아이디/비밀번호 찾기</a>
+                  <div class="text-center small">
+                    <a href="{% url 'forgot_id' %}">Find ID</a> /
+                    <a href="{% url 'forgot_pw' %}">Find PW</a>
                   </div>
                 </div>
               </div>
@@ -103,4 +72,6 @@
       </div>
     </div>
   </div>
+
+  <script src="{% static 'js/custom/login.js' %}"></script>
 {% endblock %}
