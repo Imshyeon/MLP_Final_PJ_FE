@@ -1,4 +1,4 @@
-import {rovingIndex} from 'roving-ux'
+import { rovingIndex } from 'https://cdn.skypack.dev/roving-ux' // cdn es2020
 
 document.querySelectorAll('.horizontal-media-scroller')
   .forEach(scroller => rovingIndex({

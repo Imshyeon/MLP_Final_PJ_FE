@@ -1,11 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  {% comment %} <link rel="stylesheet" href="https://storage.googleapis.com/atoms-sandbox.google.com.a.appspot.com/blokk/blokk.css" /> {% endcomment %}
-  <link rel="stylesheet" href="{% static 'css/media-scroller/style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/media-scroller/style.css' %}" />
+<style>
+    #threejs-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; 
+    }
+    
+    #product-content {
+        margin-top: 100vh; 
+    }
+</style>
+{% comment %}three.js import{% endcomment %}
+<script type="importmap">
+    {
+    "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/",
+        "roving-ux": "https://cdn.skypack.dev/roving-ux"
+    }
+    }
+</script>
+<script type="module" src="{% static 'js/three-js/fog.js' %}?ver=1" defer></script>
+<script type="module" src="{% static 'js/media-scroller/index.js' %}"></script>
+        
+{% comment %}three.js{% endcomment %}
+<div id="threejs-container"></div>
 
-  <section>
-    <header class="mt-5">
+  <section id="product-content">
+    <header>
       <h2>Similar to Locke & Key</h2>
       <h3>Popular with similar viewers</h3>
     </header>
@@ -3660,6 +3688,4 @@
       </li>
     </ul>
   </section>
-
-  <script type="src" src="{% static 'js/media-scroller/index.js' %}"></script>
 {% endblock %}
