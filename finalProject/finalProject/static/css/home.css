@@ -53,6 +53,7 @@ a:hover{
     color: #000;
     font-size: 1rem;
     display: inline-block;
+    padding: 11px 12px;
 }
 
 .cta-link:nth-child(2){
@@ -81,4 +82,10 @@ a:hover{
 
 .title-top{
     color:#000;
+}
+
+.page-support-part{
+    padding: 5rem;
+    background-color: ghostwhite;
+    margin-bottom: 0px;
 }
