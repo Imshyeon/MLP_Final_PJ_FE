@@ -95,8 +95,9 @@
               <div class="border-start ps-4 d-none d-lg-block">
                 <div class="row">
                   <div class="col">
-                    <div class="darkmode">
-                      <button data-theme-toggle aria-label="light" class="darkmode-btn" type="button"><img id="darkmodeIcon" src="{% static 'img/brightness-high-fill.svg' %}" alt="light mode icon" /></button>
+                    <div class="darkmode d-flex">
+                      <button data-theme-toggle aria-label="light" class="darkmode-btn" type="button" id="darkmodeBtn"><img id="darkmodeIcon" src="{% static 'img/brightness-high-fill.svg' %}" alt="light mode icon" /></button>
+                      <label for="darkmodeBtn" class="darkmode-text align-self-end mt-2" style="color: black;">DARKMODE</label>
                     </div>
                   </div>
                   <div class="col">
@@ -182,6 +183,6 @@
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
     </script>
-    <script src="{% static 'js/custom/dayandnight.js' %}"></script>
+    <script src="{% static 'js/custom/dayandnight.js' %}?ver=1"></script>
   </body>
 </html>
