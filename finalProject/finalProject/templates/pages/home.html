@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-  <link rel="stylesheet" href="{% static 'css/media-scroller/style.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/home.css' %}?ver=2" />
+  <link rel="stylesheet" href="{% static 'css/media-scroller/style.css' %}?ver=1" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}?ver=1" />
   <style>
     #threejs-container {
       position: absolute;
@@ -35,61 +35,20 @@
   {% comment %} <div id="threejs-container"></div> {% endcomment %}
 
   {% comment %}배경 어둡게{% endcomment %}
-  <section class="hero product-1">
+  <section class="hero product-1 mb-3">
     <div class="container">
       <div class="title title-top">
         <div class="title-heading">제목</div>
         <div class="title-sub-heading">부제목</div>
-        <p class="title-interesting">간단한 내용</p>
+        <p class="title-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim ad cupiditate dolores maiores accusamus debitis expedita. Voluptatibus iste consequatur dolores nulla vitae doloribus itaque, sed autem expedita, pariatur illum numquam.</p>
       </div>
       <div class="cta">
-        <a href="#" class="cta-link cta-link-darker">link1</a>
-        <a href="#" class="cta-link cta-link-darker">link2</a>
+        <a href="#" class="cta-link cta-link-darker btn btn-info btn-sm rounded-pill">바로가기</a>
       </div>
     </div>
   </section>
 
-  {% comment %}배경 white{% endcomment %}
-  <section class="hero product-2">
-    <div class="row gap-0">
-      <div class="img-src col-6">
-        <img src="{% static 'img/fog.jpg' %}" class="img-fluid" />
-      </div>
-      <div class="container col-6">
-        <div class="title title-dark">
-          <div class="title-heading">제목</div>
-          <div class="title-sub-heading">부제목</div>
-          <p class="title-interesting">간단한 내용</p>
-        </div>
-        <div class="cta">
-          <a href="#" class="cta-link cta-link-darker">link1</a>
-          <a href="#" class="cta-link cta-link-darker">link2</a>
-        </div>
-      </div>
-    </div>
-    <div class="row gap-0">
-      <div class="container col-6">
-        <div class="title title-dark">
-          <div class="title-heading">제목2</div>
-          <div class="title-sub-heading">부제목2</div>
-          <p class="title-interesting">간단한 내용2</p>
-        </div>
-        <div class="cta">
-          <a href="#" class="cta-link cta-link-darker">link1</a>
-          <a href="#" class="cta-link cta-link-darker">link2</a>
-        </div>
-      </div>
-      <div class="img-src col-6">
-        <img src="{% static 'img/fog.jpg' %}" class="img-fluid" />
-      </div>
-    </div>
-  </section>
-
-  <section id="product-content" class="mt-4">
-    <header>
-      <h2>Suspense</h2>
-    </header>
-
+  <section id="product-content" class="my-3">
     <ul class="horizontal-media-scroller">
       <li>
         <a href="#">
@@ -97,7 +56,6 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?14" />
             </picture>
-            <figcaption>The Strain (limited)</figcaption>
           </figure>
         </a>
       </li>
@@ -107,7 +65,6 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?15" />
             </picture>
-            <figcaption>The Following</figcaption>
           </figure>
         </a>
       </li>
@@ -117,7 +74,6 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?16" />
             </picture>
-            <figcaption>BERLIN STATION</figcaption>
           </figure>
         </a>
       </li>
@@ -127,7 +83,6 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?17" />
             </picture>
-            <figcaption>Penny Dreadful</figcaption>
           </figure>
         </a>
       </li>
@@ -137,7 +92,6 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?18" />
             </picture>
-            <figcaption>Castle Rock</figcaption>
           </figure>
         </a>
       </li>
@@ -147,250 +101,45 @@
             <picture>
               <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?19" />
             </picture>
-            <figcaption>The Walking Dead</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?11" />
-            </picture>
-            <figcaption>Legends</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?12" />
-            </picture>
-            <figcaption>The Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?13" />
-            </picture>
-            <figcaption>Almost Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?110" />
-            </picture>
-            <figcaption>Fear The Walking Dead</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?121" />
-            </picture>
-            <figcaption>Legends</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?132" />
-            </picture>
-            <figcaption>The Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?123" />
-            </picture>
-            <figcaption>Almost Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?144" />
-            </picture>
-            <figcaption>The Strain</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?125" />
-            </picture>
-            <figcaption>The Following</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?126" />
-            </picture>
-            <figcaption>BERLIN STATION</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?137" />
-            </picture>
-            <figcaption>Penny Dreadful</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?118" />
-            </picture>
-            <figcaption>Castle Rock</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?419" />
-            </picture>
-            <figcaption>The Walking Dead</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?110" />
-            </picture>
-            <figcaption>Fear The Walking Dead</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?112" />
-            </picture>
-            <figcaption>Legends</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?122" />
-            </picture>
-            <figcaption>The Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?313" />
-            </picture>
-            <figcaption>Almost Family</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?194" />
-            </picture>
-            <figcaption>The Strain</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?915" />
-            </picture>
-            <figcaption>The Following</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?176" />
-            </picture>
-            <figcaption>BERLIN STATION</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?187" />
-            </picture>
-            <figcaption>Penny Dreadful</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?178" />
-            </picture>
-            <figcaption>Castle Rock</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?189" />
-            </picture>
-            <figcaption>The Walking Dead</figcaption>
-          </figure>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <figure>
-            <picture>
-              <img alt="A placeholder image" loading="lazy" src="https://picsum.photos/500/500?117" />
-            </picture>
-            <figcaption>Fear The Walking Dead</figcaption>
           </figure>
         </a>
       </li>
     </ul>
+  </section>
+
+  {% comment %}배경 white{% endcomment %}
+  <section class="product-2">
+    <div class="row gap-0">
+      <div class="container col-lg-6 col-md-6 col-sm-12 mb-5">
+        <div class="title title-dark">
+          <div class="title-heading">제목</div>
+          <div class="title-sub-heading">부제목</div>
+          <p class="title-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate nostrum quam, rem voluptates mollitia expedita sequi at optio dolore facilis rerum alias modi quasi recusandae reiciendis asperiores eaque ea id.</p>
+        </div>
+        <div class="cta">
+          <a href="#" class="cta-link cta-link-darker btn btn-info btn-sm rounded-pill">바로가기</a>
+        </div>
+      </div>
+      <div class="img-src col-lg-6 col-md-6 col-sm-12">
+        <img src="{% static 'img/fog.jpg' %}" class="img-fluid" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <div class="title title-dark">
+          <div class="title-sub-heading">좀 더 세부적인 소개글 시작</div>
+          <p class="title-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae, doloribus. Quam beatae aspernatur eum laudantium repellat quia nisi qui reprehenderit illum perspiciatis debitis quisquam odit provident, voluptas ut expedita ex.</p>
+          <div class="product-introduce-first mx-5 px-5 mt-5 d-flex">
+            <img src="{% static 'img/fog.jpg' %}" style="width: 60%;" />
+            <div class="introduct-content align-self-center ml-4">
+              <h4 class="my-4">소개글1</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero, tempora magnam rem corrupti velit aspernatur rerum cupiditate quisquam culpa delectus fugit et perspiciatis assumenda. Eligendi, maxime deserunt. Odit, totam.</p>
+              <h4 class="my-4">소개글2</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt vero, tempora magnam rem corrupti velit aspernatur rerum cupiditate quisquam culpa delectus fugit et perspiciatis assumenda. Eligendi, maxime deserunt. Odit, totam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 {% endblock %}
