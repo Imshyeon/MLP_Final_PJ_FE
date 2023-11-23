@@ -9,9 +9,10 @@
     <meta name="description" content="" />
     <meta name="keywords" content="bootstrap, bootstrap5" />
     <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    {% comment %} <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;300;400;500;600;700&display=swap" rel="stylesheet" /> {% endcomment %}
+    <link href="https://db.onlinewebfonts.com/c/67680f2eb947c5cbd58b40961b4a61e9?family=Apple+SD+Gothic+Neo+Bold" rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
@@ -26,8 +27,8 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
     <link href="{% static 'css/fontawesome-free/css/all.min.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/custom.css' %}?ver=2" rel="stylesheet" />
-    <link href="{% static 'css/darkmode.css' %}?ver=2" rel="stylesheet" />
+    <link href="{% static 'css/custom.css' %}?ver=1" rel="stylesheet" />
+    <link href="{% static 'css/darkmode.css' %}?ver=1" rel="stylesheet" />
     <style>
       .page-header {
         background: center center no-repeat url('../../static/img/fog.jpg');
@@ -64,6 +65,7 @@
       canvas {
         display: block;
       }
+      
       .backToTop {
         position: fixed;
         right: 30px;
