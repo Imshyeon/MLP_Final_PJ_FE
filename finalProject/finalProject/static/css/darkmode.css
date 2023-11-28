@@ -13,7 +13,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-fg);
     place-items: center;
-    font-family: "Apple SD Gothic Neo Bold", sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 .card,

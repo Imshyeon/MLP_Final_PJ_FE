@@ -5,26 +5,30 @@
   .post-meta span a{
     color: #141c22;
   }
+
+  .contact-content{
+    height: 30rem;
+  }
 </style>
   <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container text-center py-5">
       {% comment %}BE : post에 대한 title, author, date, category{% endcomment %}
-      <h1 class="display-2 text-dark mb-4 animated slideInDown">Contact Title</h1>
+      <h1 class="display-2 text-dark mb-4 animated slideInDown">{{ contact_message.title }}</h1>
       <div class="post-meta align-items-center text-center">
         {% comment %} Author의 email주소 링크 {% endcomment %}
-        <span class="d-inline-block mt-1"><a href="#">By Author</a></span>
-        <span>&nbsp;-&nbsp; December 25, 2023</span>
+        <span class="d-inline-block mt-1">By. {{ contact_message.first_name }} {{ contact_message.last_name }}</span>
+        <span>&nbsp;-&nbsp; {{ contact_message.created_at }}</span>
+        <p>{{ contact_message.email }}</p>
       </div>
     </div>
   </div>
 
-  <section class="section">
+  <section class="section contact-content">
     <div class="container">
       <div class="row blog-entries element-animate justify-content-center">
         <div class="col-md-12 col-lg-8 main-content">
           <div class="post-content-body">
-            {% comment %}아래는 contact 내용이 들어가면 됩니다!{% endcomment %}
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, obcaecati vitae doloribus quas unde eius fugiat inventore quos libero repudiandae nam commodi, error est, dolor deleniti blanditiis illum dolore placeat. Qui similique fugit harum, officiis inventore non perferendis deserunt? Ipsam recusandae perspiciatis velit natus quod perferendis explicabo, nam deserunt iure voluptatum fugit consequatur iste nemo hic qui, eligendi, possimus maxime. Libero fugiat, accusantium quia quos magnam officia voluptatum, eos totam incidunt impedit hic. Magnam, vero optio provident eaque odio sit quae ipsam cum id ratione error eligendi autem quibusdam similique. Facere quisquam eveniet quae eaque distinctio sint repellendus aliquid, nesciunt commodi rerum, quod ea alias labore saepe, minima inventore officiis voluptatibus quidem esse incidunt ipsum. Enim rerum magni dolor non? Suscipit odio ullam ex modi officia ipsa doloremque veritatis assumenda ipsum nihil perferendis, minus temporibus tempore deserunt reprehenderit similique at qui eius, labore quia molestias. Inventore quidem illum beatae minima.</p>
+            <p>{{ contact_message.message }}</p>
           </div>
         </div>
       </div>

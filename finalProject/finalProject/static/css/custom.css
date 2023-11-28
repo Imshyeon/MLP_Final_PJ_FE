@@ -1,6 +1,6 @@
 body {
   /* This is the height of your footer */
-  font-family: "Apple SD Gothic Neo Bold", sans-serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 .footer-container {
@@ -28,5 +28,5 @@ h2,
 .h2,
 h1,
 .h1 {
-  font-family: "Apple SD Gothic Neo Bold", sans-serif;
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
